@@ -1,0 +1,15 @@
+body { font-family: 'Segoe UI', sans-serif; }
+.navbar-brand { font-size: 1.4rem; letter-spacing: 1px; }
+.card { border-radius: 12px; border: none; }
+.card-header { border-radius: 12px 12px 0 0 !important; }
+.btn { border-radius: 8px; }
+.bubble { max-width: 70%; word-break: break-word; }
+.bubble-me { background:#0d6efd; color:#fff; border-radius:18px 18px 4px 18px; padding:.5rem 1rem; }
+.bubble-other { background:#fff; border:1px solid #dee2e6; border-radius:18px 18px 18px 4px; padding:.5rem 1rem; }
+.bubble img { max-width:220px; border-radius:10px; display:block; }
+.chat-box { height:420px; overflow-y:auto; background:#f8f9fa; border-radius:8px; padding:1rem; }
+.contact-item.active { background:#e7f1ff; border-color:#0d6efd !important; }
+.gif-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; max-height:220px; overflow-y:auto; }
+.gif-grid img { width:100%; border-radius:6px; cursor:pointer; border:2px solid transparent; }
+.gif-grid img:hover { border-color:#0d6efd; }
+#voiceBtn.recording { background:#dc3545; color:#fff; border-color:#dc3545; }
