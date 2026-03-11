@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $name  = trim($_POST['reg_name']??'');
         $email = trim($_POST['reg_email']??'');
         $pass  = $_POST['reg_password']??'';
-        if (!str_ends_with(strtolower($email),'@ece.fr')) { $error = 'Seules les adresses @ece.fr sont autorisées.'; }
+        if (substr(strtolower($email), -strlen('@ece.fr')) !== '@ece.fr') { $error = 'Seules les adresses @ece.fr sont autorisées.'; }
         elseif ($name===''||$email===''||$pass==='')       { $error = 'Tous les champs sont requis.'; }
         elseif (registerUser($name,$email,$pass))           { $success = 'Compte créé ! Vous pouvez vous connecter.'; }
         else                                                { $error = 'Cet email est déjà utilisé.'; }
