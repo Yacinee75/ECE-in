@@ -166,6 +166,8 @@ function handleFileUpload(string $inputName, string $type): ?string {
     if (empty($_FILES[$inputName]['name'])) return null;
     $file      = $_FILES[$inputName];
     $uploadDir = __DIR__.'/../uploads/';
+    if (!is_dir($uploadDir) && !mkdir($uploadDir, 0775, true) && !is_dir($uploadDir)) return null;
+    if (!is_writable($uploadDir)) return null;
     $allowed   = ['photo'=>['image/jpeg','image/png','image/gif','image/webp'],'video'=>['video/mp4','video/webm','video/ogg']];
     $finfo     = new finfo(FILEINFO_MIME_TYPE);
     $mime      = $finfo->file($file['tmp_name']);
